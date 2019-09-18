@@ -451,4 +451,4 @@
 [很炫酷的网页](https://diygod.me/2073/)
 [参考网站3](https://www.kancloud.cn/crossken/professional_js_web_developers/207402)
 [参考网站5](http://www.ayqy.net/blog/《javascript高级程序设计》学习笔记12篇/)
-### 后记[ES6](http://127.0.0.1:8848/dcloudmdpaser?filename=D%3A%2F%E8%B5%84%E6%96%99%2FES6%E7%AC%94%E8%AE%B0.md&theme=github-markdown.css&projectname=&repath=D%3A%2F%E8%B5%84%E6%96%99%2F&charset=UTF-8)、[TypeScript](http://127.0.0.1:8848/dcloudmdpaser?filename=D%3A%2F%E8%B5%84%E6%96%99%2FTypeScript.md&theme=github-markdown.css&projectname=&repath=D%3A%2F%E8%B5%84%E6%96%99%2F&charset=UTF-8)整理中...尽情期待！
+### 后记[ES6](https://github.com/Qi-fang/repository/blob/master/ES6%E7%AC%94%E8%AE%B0.md)、[TypeScript](http://127.0.0.1:8848/dcloudmdpaser?filename=D%3A%2F%E8%B5%84%E6%96%99%2FTypeScript.md&theme=github-markdown.css&projectname=&repath=D%3A%2F%E8%B5%84%E6%96%99%2F&charset=UTF-8)整理中...尽情期待！
