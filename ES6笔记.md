@@ -24,6 +24,7 @@
 		let {foo, bar} = {foo: 'aaa', bar: 'bbb'}  
 		解构失败值为undefined  
 		变量名与属性名不一致： let{foo: baz} = {foo: 'aaa', bar: 'bbb'}调用第二个变量baz  
+		
 		const node = {
 		  loc: {
 			  start: {
@@ -91,6 +92,7 @@ Math.trunc()去除小数部分
 1.  函数参数使用默认值时函数不能有同名函数  
 		
 	解构：  
+		
 		function foo({x, y = 5}){
 			console.log(x, y);
 		}
@@ -100,6 +102,7 @@ Math.trunc()去除小数部分
 		foo() //undefined undefined
 	
 	参数默认值：  
+		
 		function foo({x, y = 5} = {}){
 			console.log(x, y);
 		}
