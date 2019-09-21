@@ -561,10 +561,10 @@ Math.trunc()去除小数部分
 4.  多个对象合成...，对个类合成先mixin后继承
 	
 ##  廿三、Module语法
-1.  export模块输出（as为变量重命名）；import加载模块输入，会提升
-	export default function(){alert('foo')} 可以指定任意名字且不使用大括号
-	import {foo} from 'module1';
-	import "lodash";
+1.  export模块输出（as为变量重命名）；import加载模块输入，会提升  
+	export default function(){alert('foo')} 可以指定任意名字且不使用大括号  
+	import {foo} from 'module1';  
+	import "lodash";  
 	`import()`提案
 	
 ##  廿四、Module加载实现
@@ -646,8 +646,8 @@ Math.trunc()去除小数部分
 10. ESLint
 
 ##	廿六、读懂规格
-1.  术语
-	F.[[Call]](v, argumentsList)
+1.  术语  
+	F.[[Call]](v, argumentsList)  
 	F：函数对象，[[Call]]：内部方法，F.[[Call]]：运行该函数，v：[[Call]]：运行时的this值，argumentsList：调用时传入函数的参数
 	
 ##	廿七、异步遍历器
@@ -709,12 +709,12 @@ Math.trunc()去除小数部分
 ##  廿九、最新提案
 1.  do表达式：可以返回值
 2.  throw表达式
-3.  链判断运算符?.  obj?.prop对象属性  func?.(...args)函数或对象方法的调用
+3.  链判断运算符?.  obj?.prop对象属性  func?.(...args)函数或对象方法的调用  
 	构造函数、模板字符串、左侧是super、链运算符用于赋值运算符左侧、右侧为十进制数值 写法禁止！
 4.  Null判断运算符 ??类似||，只有运算符左侧的值为null或者undefined时，才返回右侧的值
 5.  函数部分执行 ?单个参数的占位符，只能出现在函数调用中；...只会采集一次，多个...每个都相同
-6.  管道运算符 |>
-	exclaim(capitalize(doubleSay('hello')))
+6.  管道运算符 |>  
+	exclaim(capitalize(doubleSay('hello')))  
 	'hello' |> doubleSay |> capitalize |> exclaim只能是单参函数；多参数函数必须进行柯里化 
 7.  数值分割符 _
 8.  BigInt数据类型 必须添加后缀n
