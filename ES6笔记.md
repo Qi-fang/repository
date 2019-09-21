@@ -19,11 +19,11 @@
 	
 ##	三、解构赋值
 1.  数组解构  
-	模式匹配： 
-		let [a, b, c] = [1, 4, 6]等号两边模式相同
-		let {foo, bar} = {foo: 'aaa', bar: 'bbb'}
-		解构失败值为undefined
-		变量名与属性名不一致： let{foo: baz} = {foo: 'aaa', bar: 'bbb'}调用第二个变量baz
+	模式匹配：  
+		let [a, b, c] = [1, 4, 6]等号两边模式相同  
+		let {foo, bar} = {foo: 'aaa', bar: 'bbb'}  
+		解构失败值为undefined  
+		变量名与属性名不一致： let{foo: baz} = {foo: 'aaa', bar: 'bbb'}调用第二个变量baz  
 
 		const node = {
 		  loc: {
@@ -38,25 +38,25 @@
 		loc //Object {start: Object}
 		start //Object {line: 1, colimn: 5}
 
-	嵌套：
+	嵌套：  
 		let obj = {};
 		let arr = [];
 		({foo: obj.prop, bar: arr[0]} = {foo: 123, bar: true})
 		obj //{prop:123}
 		arr //[true]
 
-	继承： 
+	继承：  
 		const obj1 = {}
 		const obj2 = {foo: 'bar'}
 		Object.setProptotypeOf(obj1, obj2);
 		const {foo} = obj1;
 		foo //"bar"
 
-	默认值生效的条件是：对象的属性值严格等于undefined
+	默认值生效的条件是：对象的属性值严格等于undefined  
 		var {x: y = 3} = {x: 5};
 		y //5
   
-2.  对象解构、字符串解构、数值、布尔值解构、函数参数解构
+2.  对象解构、字符串解构、数值、布尔值解构、函数参数解构  
 		function move({x, y} = {}){
 			return [x, y];
 		}
@@ -73,7 +73,7 @@
 		move({}); //[undefined, undefined]
 		move(); //[0, 0]
 3.  用途  
-	交换值，从函数中返回多个值，遍历
+	交换值，从函数中返回多个值，遍历  
 		for(let [key, value] of map){}
 		for(let [, value] of map){}
 
@@ -85,7 +85,7 @@ Math.trunc()去除小数部分
 	
 ##	八、函数拓展
 1.  函数参数使用默认值时函数不能有同名函数  
-	解构：
+	解构：  
 		function foo({x, y = 5}){
 			console.log(x, y);
 		}
@@ -94,7 +94,7 @@ Math.trunc()去除小数部分
 		foo({}) //undefined 5
 		foo() //undefined undefined
 	
-	参数默认值：
+	参数默认值：  
 		function foo({x, y = 5} = {}){
 			console.log(x, y);
 		}
@@ -122,7 +122,7 @@ Math.trunc()去除小数部分
 	
 		var f = v => v;
 	函数体内的this对象就是定义时所在的对象  
-	不可以当做构造函数，不能new；不可以使用arguments对象；不可以使用yield，箭头函数不能用作Generator函数
+	不可以当做构造函数，不能new；不可以使用arguments对象；不可以使用yield，箭头函数不能用作Generator函数  
 		function foo(){
 			setTimeout(() => {
 				console.log('id', this.id);
@@ -131,14 +131,14 @@ Math.trunc()去除小数部分
 		
 		var id = 21;
 		foo.call({id: 42}); //id: 42
-	定义对象的方法时不能使用箭头函数（因为对象不构成单独的作用域）；
+	定义对象的方法时不能使用箭头函数（因为对象不构成单独的作用域）；  
 	需要动态this
 	
-6.  尾调用优化：函数的最后一步是调用另一个函数。只在严格模式下生效！
+6.  尾调用优化：函数的最后一步是调用另一个函数。只在严格模式下生效！  
 		function f(x){
 			return g(x);
 		}
-	尾递归：
+	尾递归：  
 		function Fibonacci(n, ac1 = 1, ac2 = 1){
 			if(n <= 1){return arc2};
 			return Fibonacci(n - 1, ac2, ac1 + ac2);
@@ -153,7 +153,7 @@ Math.trunc()去除小数部分
 		}
 		factorial(5);
 	
-	蹦床函数：
+	蹦床函数：  
 		function trampoline(f){
 			while (f && f instanceof Function){
 				f = f();
@@ -161,7 +161,7 @@ Math.trunc()去除小数部分
 			return f;
 		}
 	
-	真正的尾递归优化
+	真正的尾递归优化  
 		function tco(f){
 			var value, active = false, accumulated = [];
 			return function accumulator(){
@@ -187,7 +187,7 @@ Math.trunc()去除小数部分
 	
 ##	九、数组拓展
 1.  扩展运算符：...数组，不再需要apply方法，与Math.max，push方法的结合使用，  
-  	复制数组：
+  	复制数组：  
 		const a1 = [1, 2];
 		const a2 = [...a1];//const [...a2] = a1;
 		合并数组：
@@ -196,7 +196,7 @@ Math.trunc()去除小数部分
 		[...arr1, ...arr2]  //解构赋值是浅拷贝！
 	默认调用遍历器接口（Symbol.iterator），有该接口将自动转换为数组
 	
-2.  Array.from可以将类似数组的对象和可遍历的对象转换为真正的数组、接收第二个参数（用于处理元素后返回新数组）、第三个参数用来绑定this；
+2.  Array.from可以将类似数组的对象和可遍历的对象转换为真正的数组、接收第二个参数（用于处理元素后返回新数组）、第三个参数用来绑定this；  
 	可用来将字符串转换为数组
 	
 3.  Array.of()将一组值转换为数组
@@ -205,13 +205,13 @@ Math.trunc()去除小数部分
 6.  fill(， 开始(可选)，结束(可选))给定一个值填充数组
 7.  entries(键值对的遍历)、keys(对键遍历)、values(对值遍历)用于遍历数组
 8.  includes()是否包含某值
->   Map的has用来查找键名
->   Set的has用来查找值
+>   Map的has用来查找键名  
+>   Set的has用来查找值  
 9.  flat(n)将n维数组拉平成一维数组：Infinity任意层、flatMap(参数1：当前数组成员，该成员位置，原数组)对每个成员执行一个函数，只能展开1层；参数2：绑定遍历函数this
 10. 空位undefined，避免出现
 
 ##	十、对象拓展
-1.  属性简介表示
+1.  属性简介表示  
 		function f(x, y){						|	function f(x, y){
 			return {x, y}						|		return {x: x, y: y}
 		}										|	}
@@ -232,7 +232,7 @@ Math.trunc()去除小数部分
 		console.log(user, foo) //{name: "test"}{bar: "baz"}
 		console.log({user, foo}) //{user: {name: "test"}, foo: {bar: "baz"}}
 	
-2.  属性的可枚举和遍历
+2.  属性的可枚举和遍历  
 >   for...in：遍历自身和继承的可枚举属性  
 >   Object.keys()：返回自身的可枚举的键名  
 >   JSON.stringify()：字符串化对象自身的可枚举属性  
@@ -255,7 +255,7 @@ Math.trunc()去除小数部分
 ##	十二、symbol
 1.  第七种数据类型：防止属性名冲突
 2.  sym.description 直接返回symbol的描述
-3.  属性名
+3.  属性名  
 		let mySymbol = Symbol();
 		let a = {};
 		a[mySymbol] = 'Hello!'; //只能用方括号指定属性名
@@ -286,7 +286,7 @@ Math.trunc()去除小数部分
 4.  WeakMap 没有clear()，另一用处是部署所有属性
 	
 ##	十四、Proxy代理
-1.  Proxy构造函数
+1.  Proxy构造函数  
 		var proxy = new Proxy(target拦截的目标对象, handler定制拦截行为);
 		
 		var handler = {
@@ -333,7 +333,7 @@ Math.trunc()去除小数部分
 	与proxy方法一一对应  `实现观察者模式`
 	
 ##	十六、promise对象
-1.  生成Promise实例
+1.  生成Promise实例  
 		const promise = new Promise(function(resolve, reject){
 			if(){
 				return resolve(value);
@@ -354,7 +354,7 @@ Math.trunc()去除小数部分
 	Promise.resolve()参数分4种情况  
 	Promise.reject()参数会变成后续方法的参数
 	
-3. try()
+3. try()  
 	async()同步函数同步执行，异步函数异步执行
   
 ##	十七、Iterator和for...of循环
@@ -372,7 +372,7 @@ Math.trunc()去除小数部分
 	for...in遍历数组的键名key：缺点键名如果是数字循环后以字符串作为键名；还会遍历手动添加的其他键、原型链上的键。主要用来遍历对象
 	
 ##	十八、Generator语法
-1.  异步编程解决方案：封装内部状态，返回遍历器对象
+1.  异步编程解决方案：封装内部状态，返回遍历器对象  
 		function* generators(){
 			yield "hello";
 			yield 'world';
@@ -380,7 +380,7 @@ Math.trunc()去除小数部分
 		}
 		var hw = generators();
 	
-2.  next()
+2.  next()  
 		function* foo(x) {
 			var y = 2 * (yield (x + 1));
 			var z = yield(y / 3);
@@ -397,7 +397,7 @@ Math.trunc()去除小数部分
 		console.log(b.next(13));//Object{value: 42, done:true}
 	next的参数表示yield表达式的值，第二次使用时才有效
 	
-3.  for...of
+3.  for...of  
 		function* fibonacci(){
 			let [prev, curr] = [0, 1];
 			for(;;){
@@ -442,7 +442,7 @@ Math.trunc()去除小数部分
 			myGeneratorMethod: function* (){...}
 		}
 		
-5.  this
+5.  this  
 		function* gen(){
 			this.a = 1;
 			yield this.b = 2;
@@ -458,7 +458,7 @@ Math.trunc()去除小数部分
 		f.a;
 		f.b;
 		f.c;
-6. 状态机
+6. 状态机  
 		var clock = function* (){
 			while (true){
 				console.log('Tick!');
@@ -468,7 +468,7 @@ Math.trunc()去除小数部分
 			}
 		}
 7. 应用：  
-	1、异步操作的同步化表达，改写回调函数`如Ajax`
+	1、异步操作的同步化表达，改写回调函数`如Ajax`  
 		function* loadUI(){
 			showLoadingScreen();
 			yield loadUIDataAsynchronously();
@@ -477,7 +477,7 @@ Math.trunc()去除小数部分
 		var loader = loadUI();
 		loader.next()
 		loader.next()
-	2、控制流管理
+	2、控制流管理  
 		Promise.resolve(step1)
 			.then(step2)
 			.then(step3)
@@ -506,7 +506,7 @@ Math.trunc()去除小数部分
 3.  co模块 `处理Stream`:data事件、end事件、error事件
 	
 ##	二十、async
-1.  Generator函数的语法糖async替换*，await替换yield
+1.  Generator函数的语法糖async替换*，await替换yield  
 		async function chainAnimationsAsync(elem, animations){
 			let ret = null;
 			try {
@@ -519,7 +519,7 @@ Math.trunc()去除小数部分
 			return ret;
 		}
 		
-	并发读取URL：
+	并发读取URL：  
 		async function logInOrder(urls){
 			const textPromises = urls.map(async url =>{
 				const response await fetch(url);
@@ -532,7 +532,7 @@ Math.trunc()去除小数部分
 2.  顶层await可以单独使用，多个await同步执行
 	
 ##	廿一、Class语法
-1.  Object.assign可以向类添加多个方法；类的内部定义的方法不可枚举！类必须通过new来调用，类不存在变量提升
+1.  Object.assign可以向类添加多个方法；类的内部定义的方法不可枚举！类必须通过new来调用，类不存在变量提升  
 		class Point {
 			constructor(x, y){
 				this.x = x;
@@ -548,16 +548,15 @@ Math.trunc()去除小数部分
 	
 ##  廿二、extends继承
 1.  继承原生的构造函数；继承类：Object.getPrototypeOf()判断一个类是否继承另一个类
-	
 2.  super作为函数调用，只能在子类的构造函数中使用；作为对象在普通方法中指向父类的原型对象/通过super调用父类方法时this指向当前子类实例，
 	在静态方法中指向父类/通过super调用父类方法时指向当前子类
-3.  类的两条继承链
-	class A {}
-	class B entends A{}
-	B.__proto__ === A; //true
-	B.prototype.__proto__ === A.prototype; //true
-	作为对象，子类B的原型（__proto__属性）是父类A；
-	作为构造函数，子类B的原型对象（prototype属性）是父类原型对象（prototype属性）的实例
+3.  类的两条继承链  
+		class A {}  
+		class B entends A{}  
+		B.__proto__ === A; //true
+		B.prototype.__proto__ === A.prototype; //true
+		作为对象，子类B的原型（__proto__属性）是父类A；
+		作为构造函数，子类B的原型对象（prototype属性）是父类原型对象（prototype属性）的实例
 4.  多个对象合成...，对个类合成先mixin后继承
 	
 ##  廿三、Module语法
@@ -569,7 +568,7 @@ Math.trunc()去除小数部分
 	
 ##  廿四、Module加载实现
 1.  浏览器加载 type="module"等同于defer属性
-2.  CommonJS模块输出的是一个值的拷贝、运行时加载，ES6模块输出的是值的引用、编译时输出接口；
+2.  CommonJS模块输出的是一个值的拷贝、运行时加载，ES6模块输出的是值的引用、编译时输出接口；  
 	CommonJS加载的是一个对象、脚本运行完才生成；ES6模块是一种静态定义
 3.  Node CommonJS模块的this指向当前模块；ES6指向undefined
 4.  `ES6与CommonJS相互加载`、`循环加载`
@@ -577,16 +576,16 @@ Math.trunc()去除小数部分
 ##  廿五、编码风格
 1.  let 声明代替var 声明；全局常量和多线程用const声明
 2.  静态字符串用单引号 const a = 'foobar'
-3.  优先使用解构赋值：
+3.  优先使用解构赋值：  
 		使用数组成员对变量赋值，const [first, second] = arr;
 		函数的参数如果是对象的成员，function getFullName({firstName, lastName}){}
-		函数返回多个值，使用对象的解构赋值，
+		函数返回多个值，使用对象的解构赋值，  
 			function processInput(input){
 				return {left, right, top, bottom};
 			} 
 			const{left, right} = processInput(input);
 		
-4.  对象
+4.  对象  
 		const a = {x: null};
 		a.x = 3;
 		console.log(a);
@@ -604,24 +603,24 @@ Math.trunc()去除小数部分
 			}
 		}
 		
-5.  数组
+5.  数组  
 		使用拓展运算符拷贝数组
 		const itemsCopy = [...items];
 		const foo = Array.from(document.querySelectorAll('.foo'));
 		
-6.  函数
+6.  函数  
 		匿名函数做参数：[1, 3, 5].map(x => X * x);
 		箭头函数取代bind：const boundMethod = (...params) => method.apply(this, params);
 		所有配置项集中在一个对象，布尔值不能直接做对象：function divide(a, b, {option = false} = {}){}
-		函数体内用...代替arguments：
+		函数体内用...代替arguments：  
 			function concatenateAll(...args){
 				return args.join('');
 			}
 		使用默认值语法设置函数参数的默认值：function handleThings(opts = {}){}
 		
-7.  Map
+7.  Map  
 		只需key: value数据结构使用Map
-8.  Class
+8.  Class  
 		class Queue {
 			constructor(contents = []){
 				this._queue = [...contents];
@@ -639,7 +638,7 @@ Math.trunc()去除小数部分
 			}
 		}
 		
-9.  模块
+9.  模块  
 		使用import取代require：import {func1, func2} from 'moduleA'
 		使用export取代module.exports：
 		
@@ -652,7 +651,7 @@ Math.trunc()去除小数部分
 	
 ##	廿七、异步遍历器
 1.  asyncIterator异步遍历器：返回的是一个Promise对象；next可以连续调用（放在Promise.all方法里/await最后一步操作）
-2.  for await...of遍历异步接口
+2.  for await...of遍历异步接口  
 		async function main(inputFilePath){
 			const readStream = fs.createReadStream(inputFilePath, {encoding: 'utf8', highWaterMark: 1024});
 			for await(const chunk of readStream){
@@ -661,8 +660,8 @@ Math.trunc()去除小数部分
 			console.log('### DONE ###');
 		}
 		
-3.  异步Generator函数
-		//同步
+3.  异步Generator函数  
+		//同步  
 		function* map(iterable, func){
 			const iter = iterable[Symbol.iterator]();
 			while(true){
@@ -671,7 +670,7 @@ Math.trunc()去除小数部分
 				yield func(value);
 			}
 		}
-		//异步
+		//异步  
 		async function* map(iterable, func){
 			const iter = iterable[Symbol.asyncIterator]();
 			while(true){
@@ -681,7 +680,7 @@ Math.trunc()去除小数部分
 			}
 		}
 		
-		await用于将外部操作产生的值输入函数内部，yield命令用于将函数内部的值输出
+		await用于将外部操作产生的值输入函数内部，yield命令用于将函数内部的值输出  
 		function fetchRandom(){
 			const url = 'https://www.random.org/decimal-fractions/' + '?num=1&col=1&format=plain&rnd=new';
 			return fetch(url);
