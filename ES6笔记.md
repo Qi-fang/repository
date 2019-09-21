@@ -25,57 +25,57 @@
 		解构失败值为undefined  
 		变量名与属性名不一致： let{foo: baz} = {foo: 'aaa', bar: 'bbb'}调用第二个变量baz  
 
-		const node = {
-		  loc: {
-			  start: {
-				  line: 1,
-				  column: 5
+			const node = {
+			  loc: {
+				  start: {
+					  line: 1,
+					  column: 5
+				  }
 			  }
-		  }
-		};
-		let{loc, loc: {start}, loc: {start: {line}}} = node;
-		line //1
-		loc //Object {start: Object}
-		start //Object {line: 1, colimn: 5}
+			};
+			let{loc, loc: {start}, loc: {start: {line}}} = node;
+			line //1
+			loc //Object {start: Object}
+			start //Object {line: 1, colimn: 5}
 
 	嵌套：  
-		let obj = {};
-		let arr = [];
-		({foo: obj.prop, bar: arr[0]} = {foo: 123, bar: true})
-		obj //{prop:123}
-		arr //[true]
+			let obj = {};
+			let arr = [];
+			({foo: obj.prop, bar: arr[0]} = {foo: 123, bar: true})
+			obj //{prop:123}
+			arr //[true]
 
 	继承：  
-		const obj1 = {}
-		const obj2 = {foo: 'bar'}
-		Object.setProptotypeOf(obj1, obj2);
-		const {foo} = obj1;
-		foo //"bar"
-
+			const obj1 = {}
+			const obj2 = {foo: 'bar'}
+			Object.setProptotypeOf(obj1, obj2);
+			const {foo} = obj1;
+			foo //"bar"
+	
 	默认值生效的条件是：对象的属性值严格等于undefined  
-		var {x: y = 3} = {x: 5};
-		y //5
+			var {x: y = 3} = {x: 5};
+			y //5
   
 2.  对象解构、字符串解构、数值、布尔值解构、函数参数解构  
-		function move({x, y} = {}){
-			return [x, y];
-		}
-		move({x: 3, y: 8}); //[3, 8]
-		move({x: 3}); //[3, 0]
-		move({}); //[0, 0]
-		move(); //[0, 0]
-		
-		function move({x, y} = {x = 0, y = 0}){
-			return [x, y];
-		}
-		move({x: 3, y: 8}); //[3, 8]
-		move({x: 3}); //[3, undefined]
-		move({}); //[undefined, undefined]
-		move(); //[0, 0]
+			function move({x, y} = {}){
+				return [x, y];
+			}
+			move({x: 3, y: 8}); //[3, 8]
+			move({x: 3}); //[3, 0]
+			move({}); //[0, 0]
+			move(); //[0, 0]
+			
+			function move({x, y} = {x = 0, y = 0}){
+				return [x, y];
+			}
+			move({x: 3, y: 8}); //[3, 8]
+			move({x: 3}); //[3, undefined]
+			move({}); //[undefined, undefined]
+			move(); //[0, 0]
 3.  用途  
 	交换值，从函数中返回多个值，遍历  
-		for(let [key, value] of map){}
-		for(let [, value] of map){}
+			for(let [key, value] of map){}  
+			for(let [, value] of map){}
 
 ##	七、拓展
 1.  模板字符串(\`${}`)；反引号内含有反引号用反斜线转义  
@@ -85,105 +85,105 @@ Math.trunc()去除小数部分
 	
 ##	八、函数拓展
 1.  函数参数使用默认值时函数不能有同名函数  
-	解构：  
-		function foo({x, y = 5}){
-			console.log(x, y);
-		}
-		foo({x: 1, y: 2}) //1 2
-		foo({x: 1}) //1 5
-		foo({}) //undefined 5
-		foo() //undefined undefined
-	
-	参数默认值：  
-		function foo({x, y = 5} = {}){
-			console.log(x, y);
-		}
-		foo({x: 1, y: 2}); //1 2
-		foo({x: 1}); //1 5
-		foo({}); //undefined 5
-		foo(); //undefined 5
+		解构：  
+			function foo({x, y = 5}){
+				console.log(x, y);
+			}
+			foo({x: 1, y: 2}) //1 2
+			foo({x: 1}) //1 5
+			foo({}) //undefined 5
+			foo() //undefined undefined
+		
+		参数默认值：  
+			function foo({x, y = 5} = {}){
+				console.log(x, y);
+			}
+			foo({x: 1, y: 2}); //1 2
+			foo({x: 1}); //1 5
+			foo({}); //undefined 5
+			foo(); //undefined 5
 2.  函数的length等于默认值前参数个数（不包括默认值参数）
 
 3.  rest参数及是拓展运算符：...变量名  
-		funtion sortNumbers(){
-			return Array.prototype.slice.call(arguments).sort();
-		}
-		
-		const sortNumbers = (...numbers) => numbers.sort();
+			funtion sortNumbers(){
+				return Array.prototype.slice.call(arguments).sort();
+			}
+			
+			const sortNumbers = (...numbers) => numbers.sort();
 	函数的length不包括rest参数，且rest参数只能放于最后
 	
 4.  name属性  
 	ES6更正：函数表达式的name属性返回函数名
 	
 5.  箭头函数  
-		var f = function(v){
-			return v;
-		}
-	
-		var f = v => v;
-	函数体内的this对象就是定义时所在的对象  
-	不可以当做构造函数，不能new；不可以使用arguments对象；不可以使用yield，箭头函数不能用作Generator函数  
-		function foo(){
-			setTimeout(() => {
-				console.log('id', this.id);
-			}, 100);
-		}
+			var f = function(v){
+				return v;
+			}
 		
-		var id = 21;
-		foo.call({id: 42}); //id: 42
-	定义对象的方法时不能使用箭头函数（因为对象不构成单独的作用域）；  
-	需要动态this
+			var f = v => v;
+		函数体内的this对象就是定义时所在的对象  
+		不可以当做构造函数，不能new；不可以使用arguments对象；不可以使用yield，箭头函数不能用作Generator函数  
+			function foo(){
+				setTimeout(() => {
+					console.log('id', this.id);
+				}, 100);
+			}
+			
+			var id = 21;
+			foo.call({id: 42}); //id: 42
+		定义对象的方法时不能使用箭头函数（因为对象不构成单独的作用域）；  
+		需要动态this
 	
 6.  尾调用优化：函数的最后一步是调用另一个函数。只在严格模式下生效！  
-		function f(x){
-			return g(x);
-		}
+			function f(x){
+				return g(x);
+			}
 	尾递归：  
-		function Fibonacci(n, ac1 = 1, ac2 = 1){
-			if(n <= 1){return arc2};
-			return Fibonacci(n - 1, ac2, ac1 + ac2);
-		}
-		Fibonacci(100);
-		Fibonacci(1000);
-		fibonacci(10000);
-		
-		function factorial(n, total = 1){
-			if(n === 1) return total;
-			return factorial(n - 1, n * total);
-		}
-		factorial(5);
+			function Fibonacci(n, ac1 = 1, ac2 = 1){
+				if(n <= 1){return arc2};
+				return Fibonacci(n - 1, ac2, ac1 + ac2);
+			}
+			Fibonacci(100);
+			Fibonacci(1000);
+			fibonacci(10000);
+			
+			function factorial(n, total = 1){
+				if(n === 1) return total;
+				return factorial(n - 1, n * total);
+			}
+			factorial(5);
 	
 	蹦床函数：  
-		function trampoline(f){
-			while (f && f instanceof Function){
-				f = f();
+			function trampoline(f){
+				while (f && f instanceof Function){
+					f = f();
+				}
+				return f;
 			}
-			return f;
-		}
 	
 	真正的尾递归优化  
-		function tco(f){
-			var value, active = false, accumulated = [];
-			return function accumulator(){
-				accumulated.push(arguments);
-				if(!active){
-					active = true;
-					while(accumulated.length){
-						value = f.apply(this, accumulated.shift());
+			function tco(f){
+				var value, active = false, accumulated = [];
+				return function accumulator(){
+					accumulated.push(arguments);
+					if(!active){
+						active = true;
+						while(accumulated.length){
+							value = f.apply(this, accumulated.shift());
+						}
+						active = false;
+						return value;
 					}
-					active = false;
-					return value;
 				}
 			}
-		}
-		var sum = tco(function(x, y){
-			if(y > 0){
-				return sum(x + 1, y - 1)
-			}else{
-				return x;
-			}
-		})
-		sum(1, 100000); //100001
+			var sum = tco(function(x, y){
+				if(y > 0){
+					return sum(x + 1, y - 1)
+				}else{
+					return x;
+				}
+			})
+			sum(1, 100000); //100001
 	
 ##	九、数组拓展
 1.  扩展运算符：...数组，不再需要apply方法，与Math.max，push方法的结合使用，  
