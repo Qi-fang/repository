@@ -133,6 +133,7 @@ Math.trunc()去除小数部分
 		var f = v => v;
 	函数体内的this对象就是定义时所在的对象  
 	不可以当做构造函数，不能new；不可以使用arguments对象；不可以使用yield，箭头函数不能用作Generator函数  
+		
 		function foo(){
 			setTimeout(() => {
 				console.log('id', this.id);
@@ -202,6 +203,7 @@ Math.trunc()去除小数部分
 ##	九、数组拓展
 1.  扩展运算符：...数组，不再需要apply方法，与Math.max，push方法的结合使用，  
   	复制数组：  
+		
 		const a1 = [1, 2];
 		const a2 = [...a1];//const [...a2] = a1;
 		合并数组：
@@ -226,6 +228,7 @@ Math.trunc()去除小数部分
 
 ##	十、对象拓展
 1.  属性简介表示  
+		
 		function f(x, y){						|	function f(x, y){
 			return {x, y}						|		return {x: x, y: y}
 		}										|	}
@@ -270,6 +273,7 @@ Math.trunc()去除小数部分
 1.  第七种数据类型：防止属性名冲突
 2.  sym.description 直接返回symbol的描述
 3.  属性名  
+		
 		let mySymbol = Symbol();
 		let a = {};
 		a[mySymbol] = 'Hello!'; //只能用方括号指定属性名
@@ -301,6 +305,7 @@ Math.trunc()去除小数部分
 	
 ##	十四、Proxy代理
 1.  Proxy构造函数  
+		
 		var proxy = new Proxy(target拦截的目标对象, handler定制拦截行为);
 		
 		var handler = {
@@ -348,6 +353,7 @@ Math.trunc()去除小数部分
 	
 ##	十六、promise对象
 1.  生成Promise实例  
+		
 		const promise = new Promise(function(resolve, reject){
 			if(){
 				return resolve(value);
@@ -387,6 +393,7 @@ Math.trunc()去除小数部分
 	
 ##	十八、Generator语法
 1.  异步编程解决方案：封装内部状态，返回遍历器对象  
+		
 		function* generators(){
 			yield "hello";
 			yield 'world';
@@ -395,6 +402,7 @@ Math.trunc()去除小数部分
 		var hw = generators();
 	
 2.  next()  
+		
 		function* foo(x) {
 			var y = 2 * (yield (x + 1));
 			var z = yield(y / 3);
@@ -412,6 +420,7 @@ Math.trunc()去除小数部分
 	next的参数表示yield表达式的值，第二次使用时才有效
 	
 3.  for...of  
+		
 		function* fibonacci(){
 			let [prev, curr] = [0, 1];
 			for(;;){
@@ -425,6 +434,7 @@ Math.trunc()去除小数部分
 		}
 4.  throw、return；yield*表达式返回该遍历器对象的内部值（yield返回一个遍历器对象）例子。。。  
 	yield* 后面的Generator函数（没有return）等同于在Generator函数内部部署了一个for...of循环   `yield遍历`  
+		
 		function Tree(left, label, right){
 			this.left = left;
 			this.label = label;
@@ -457,6 +467,7 @@ Math.trunc()去除小数部分
 		}
 		
 5.  this  
+		
 		function* gen(){
 			this.a = 1;
 			yield this.b = 2;
@@ -473,6 +484,7 @@ Math.trunc()去除小数部分
 		f.b;
 		f.c;
 6. 状态机  
+		
 		var clock = function* (){
 			while (true){
 				console.log('Tick!');
@@ -483,6 +495,7 @@ Math.trunc()去除小数部分
 		}
 7. 应用：  
 	1、异步操作的同步化表达，改写回调函数`如Ajax`  
+		
 		function* loadUI(){
 			showLoadingScreen();
 			yield loadUIDataAsynchronously();
@@ -521,6 +534,7 @@ Math.trunc()去除小数部分
 	
 ##	二十、async
 1.  Generator函数的语法糖async替换*，await替换yield  
+		
 		async function chainAnimationsAsync(elem, animations){
 			let ret = null;
 			try {
@@ -534,6 +548,7 @@ Math.trunc()去除小数部分
 		}
 		
 	并发读取URL：  
+		
 		async function logInOrder(urls){
 			const textPromises = urls.map(async url =>{
 				const response await fetch(url);
@@ -547,6 +562,7 @@ Math.trunc()去除小数部分
 	
 ##	廿一、Class语法
 1.  Object.assign可以向类添加多个方法；类的内部定义的方法不可枚举！类必须通过new来调用，类不存在变量提升  
+		
 		class Point {
 			constructor(x, y){
 				this.x = x;
@@ -565,6 +581,7 @@ Math.trunc()去除小数部分
 2.  super作为函数调用，只能在子类的构造函数中使用；作为对象在普通方法中指向父类的原型对象/通过super调用父类方法时this指向当前子类实例，
 	在静态方法中指向父类/通过super调用父类方法时指向当前子类
 3.  类的两条继承链  
+		
 		class A {}  
 		class B entends A{}  
 		B.__proto__ === A; //true
@@ -594,12 +611,14 @@ Math.trunc()去除小数部分
 		使用数组成员对变量赋值，const [first, second] = arr;
 		函数的参数如果是对象的成员，function getFullName({firstName, lastName}){}
 		函数返回多个值，使用对象的解构赋值，  
+			
 			function processInput(input){
 				return {left, right, top, bottom};
 			} 
 			const{left, right} = processInput(input);
 		
 4.  对象  
+		
 		const a = {x: null};
 		a.x = 3;
 		console.log(a);
@@ -623,10 +642,11 @@ Math.trunc()去除小数部分
 		const foo = Array.from(document.querySelectorAll('.foo'));
 		
 6.  函数  
-		匿名函数做参数：[1, 3, 5].map(x => X * x);
-		箭头函数取代bind：const boundMethod = (...params) => method.apply(this, params);
-		所有配置项集中在一个对象，布尔值不能直接做对象：function divide(a, b, {option = false} = {}){}
+		匿名函数做参数：[1, 3, 5].map(x => X * x);  
+		箭头函数取代bind：const boundMethod = (...params) => method.apply(this, params);  
+		所有配置项集中在一个对象，布尔值不能直接做对象：function divide(a, b, {option = false} = {}){}  
 		函数体内用...代替arguments：  
+			
 			function concatenateAll(...args){
 				return args.join('');
 			}
@@ -635,6 +655,7 @@ Math.trunc()去除小数部分
 7.  Map  
 		只需key: value数据结构使用Map
 8.  Class  
+		
 		class Queue {
 			constructor(contents = []){
 				this._queue = [...contents];
@@ -666,6 +687,7 @@ Math.trunc()去除小数部分
 ##	廿七、异步遍历器
 1.  asyncIterator异步遍历器：返回的是一个Promise对象；next可以连续调用（放在Promise.all方法里/await最后一步操作）
 2.  for await...of遍历异步接口  
+		
 		async function main(inputFilePath){
 			const readStream = fs.createReadStream(inputFilePath, {encoding: 'utf8', highWaterMark: 1024});
 			for await(const chunk of readStream){
@@ -676,6 +698,7 @@ Math.trunc()去除小数部分
 		
 3.  异步Generator函数  
 		//同步  
+		
 		function* map(iterable, func){
 			const iter = iterable[Symbol.iterator]();
 			while(true){
@@ -685,6 +708,7 @@ Math.trunc()去除小数部分
 			}
 		}
 		//异步  
+		
 		async function* map(iterable, func){
 			const iter = iterable[Symbol.asyncIterator]();
 			while(true){
