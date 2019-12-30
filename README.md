@@ -13,6 +13,7 @@
 [美股市值 ‧ TOP100](https://tophub.today/n/aqeEaZVe9R)  
 [独角兽排行](https://tophub.today/n/qndg1gWoLl)  
 [360°图片或视频](https://www.airpano.com)  
+[图片高清处理](https://bigjpg.com)  
 [极简壁纸](https://bz.zzzmh.cn)  
 [多邻国](http://www.duolingo.cn)
 [（纯干货）英语音标学习](https://www.bilibili.com/video/av47522084/?p=1)  
