@@ -18,3 +18,4 @@
 [多邻国](http://www.duolingo.cn)  
 [quora](https://www.quora.com)  
 [小熊油耗](http://www.xiaoxiongyouhao.com)  
+[汽车安全指数](http://ciasi.org.cn/home/safety/index/typeid/15.html)  
