@@ -4,7 +4,7 @@
 我喜欢看排行榜就从这里开始  
 [软件下载排行](https://www.qimai.cn/rank/globalrank)  
 [拍照评分排行](https://www.dxomark.com/cn/)  
-[显卡天梯图](https://www.mydrivers.com/zhuanti/tianti/gpu/index.html)  
+[显卡天梯图](https://www.mydrivers.com/zhuanti/tianti/gpu/index.html)
 [CPU天梯图](https://www.mydrivers.com/zhuanti/tianti/cpu/index.html)  
 [汽车安全指数](http://ciasi.org.cn/home/safety/index/typeid/15.html)  
 [小熊油耗](http://www.xiaoxiongyouhao.com)  
