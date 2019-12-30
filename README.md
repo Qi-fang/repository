@@ -17,3 +17,4 @@
 [极简壁纸](https://bz.zzzmh.cn)  
 [多邻国](http://www.duolingo.cn)  
 [quora](https://www.quora.com)  
+[小熊油耗](http://www.xiaoxiongyouhao.com)  
