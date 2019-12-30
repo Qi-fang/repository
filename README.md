@@ -12,3 +12,8 @@
 [中国汽车销量](https://m.gasgoo.com/qcxl)  
 [美国汽车销量](https://www.marklines.com/cn/statistics/flash_sales/salesfig_usa_2019)  
 [高考成绩查询](http://www.199it.com/gkcf) [985](http://www.eol.cn/e_html/gk/gxmdold/985.shtml) [211](http://www.eol.cn/e_html/gk/gxmdold/211.shtml)  
+[雨](https://rainymood.com/)  
+[360°图片或视频](https://www.airpano.com)  
+[极简壁纸](https://bz.zzzmh.cn)  
+[多邻国](http://www.duolingo.cn)  
+[quora](https://www.quora.com)  
