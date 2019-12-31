@@ -3,27 +3,27 @@
 
 我喜欢看排行榜就从这里开始  
 [APP下载排行](https://www.qimai.cn/rank/globalrank)：软件下载量排行  
-[拍照评分排行](https://www.dxomark.com/cn/)手机、数码相机、镜头拍照评分  
+[拍照评分排行](https://www.dxomark.com/cn/)：手机、数码相机、镜头拍照评分  
 [显卡天梯图](https://www.mydrivers.com/zhuanti/tianti/gpu/index.html)
-[CPU天梯图](https://www.mydrivers.com/zhuanti/tianti/cpu/index.html)PC端显卡CPU性能排行  
-[汽车安全指数](http://ciasi.org.cn/home/safety/index/typeid/15.html)中国保险汽车安全指数  
-[小熊油耗](http://www.xiaoxiongyouhao.com)油耗评测  
+[CPU天梯图](https://www.mydrivers.com/zhuanti/tianti/cpu/index.html)：PC端显卡CPU性能排行  
+[汽车安全指数](http://ciasi.org.cn/home/safety/index/typeid/15.html)：中国保险汽车安全指数  
+[小熊油耗](http://www.xiaoxiongyouhao.com)：油耗评测  
 [中国汽车销量](https://m.gasgoo.com/qcxl)  
 [美国汽车销量](https://www.marklines.com/cn/statistics/flash_sales/salesfig_usa_2019)  
 [美股市值 ‧ TOP100](https://tophub.today/n/aqeEaZVe9R)  
 [独角兽排行](https://tophub.today/n/qndg1gWoLl)  
 [360°图片或视频](https://www.airpano.com)  
 [图片高清处理](https://bigjpg.com)  
-[极简壁纸](https://bz.zzzmh.cn)免费无LOGO高清壁纸  
+[极简壁纸](https://bz.zzzmh.cn)：免费无LOGO高清壁纸  
 [多邻国](http://www.duolingo.cn)
 [（纯干货）英语音标学习](https://www.bilibili.com/video/av47522084/?p=1)  
 [oeasy](http://oeasy.org)
-[2uts](https://2uts.com/)国内外免费学习视频网站  
+[2uts](https://2uts.com/)：国内外免费学习视频网站  
 [mooc视频](https://www.edukatico.org/en/courses)
-[quora](https://www.quora.com)中国知乎借鉴于这里  
+[quora](https://www.quora.com)：中国知乎借鉴于这里  
 [豆瓣2019年度电影榜单](https://movie.douban.com/annual/2019?source=navigation)  
-[雨](https://rainymood.com/)各种雨的声音  
-[doge搜索](https://www.dogedoge.com/)无任何广告的搜索工具  
+[雨](https://rainymood.com/)：各种雨的声音  
+[doge搜索](https://www.dogedoge.com/)：无任何广告的搜索工具  
 [设计师导航网](https://www.seeseed.com/)  
 [前端导航](https://www.frontendjs.com/)  
 [开源项目](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)  
