@@ -13,16 +13,18 @@
 [美股市值 ‧ TOP100](https://tophub.today/n/aqeEaZVe9R)  
 [独角兽排行](https://tophub.today/n/qndg1gWoLl)  
 [360°图片或视频](https://www.airpano.com)  
+[天空之城](https://www.skypixel.com/)航拍的每一帧都是超清壁纸  
 [图片高清处理](https://bigjpg.com)  
 [极简壁纸](https://bz.zzzmh.cn)：免费无LOGO高清壁纸  
 [多邻国](http://www.duolingo.cn)
 [（纯干货）英语音标学习](https://www.bilibili.com/video/av47522084/?p=1)  
 [oeasy](http://oeasy.org)
 [2uts](https://2uts.com/)：国内外免费学习视频网站  
-[mooc视频](https://www.edukatico.org/en/courses)
+[mooc视频](https://www.edukatico.org/en/courses)：几乎所有大学和mooc平台的线上教学视频都在这里
 [quora](https://www.quora.com)：中国知乎借鉴于这里  
 [豆瓣2019年度电影榜单](https://movie.douban.com/annual/2019?source=navigation)  
-[雨](https://rainymood.com/)：各种雨的声音  
+[雨](https://rainymood.com/)：各种雨的声音
+[音乐集合器](https://listen1.github.io/listen1/)：PC端的各大音乐播放器歌曲都可以这播放  
 [doge搜索](https://www.dogedoge.com/)：无任何广告的搜索工具  
 [设计师导航网](https://www.seeseed.com/)  
 [前端导航](https://www.frontendjs.com/)  
