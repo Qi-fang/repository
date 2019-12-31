@@ -24,6 +24,8 @@
 [豆瓣2019年度电影榜单](https://movie.douban.com/annual/2019?source=navigation)  
 [雨](https://rainymood.com/)  
 [doge搜索](https://www.dogedoge.com/)  
+[设计师导航网](https://www.seeseed.com/)  
+[前端导航](https://www.frontendjs.com/)  
 [开源项目](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)  
 [防骗数据库](http://www.fpsjk.com/)  
 [高考成绩查询](http://www.199it.com/gkcf) [985](http://www.eol.cn/e_html/gk/gxmdold/985.shtml) [211](http://www.eol.cn/e_html/gk/gxmdold/211.shtml)  
